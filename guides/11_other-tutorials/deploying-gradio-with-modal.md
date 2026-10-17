@@ -71,7 +71,7 @@ To get Modal to serve our `demo`, we can leverage Gradio and Modal's support for
 
 ```python
 with web_image.imports():
-	import gradio as gr
+    import gradio as gr
     from gradio.routes import mount_gradio_app
     from fastapi import FastAPI
      
@@ -84,9 +84,9 @@ with web_image.imports():
 def ui():
     """A simple Gradio interface for a greeting function."""
     def greet(name):
-	    return f"Hello {name}!"
-	
-	demo = gr.Interface(fn=greet, inputs="text", outputs="text")
+        return f"Hello {name}!"
+
+    demo = gr.Interface(fn=greet, inputs="text", outputs="text")
 
     return mount_gradio_app(app=FastAPI(), blocks=demo, path="/")
 ```
